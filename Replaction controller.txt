@@ -1,0 +1,43 @@
+Replaction controller
+==================================
+kubectl get nodes
+       
+ls
+      
+vim replication-controller.yml
+
+---
+apiversion: v1
+kind: ReplicationController
+metadata: 
+  name: httpd-rc
+  labels:
+    author: yeswanth
+    type: webserver
+spec: 
+   replicas: 3
+   template:
+   metadata:
+     name: httpd-pod
+     labels:
+     type: webserver
+  spec:
+     containers:
+        - name: myhttpd
+        image: httpd
+        ports:
+        - containerPort: 80
+         hostPort: 8080
+...
+
+kubectl apply -f replication-conroller.yml
+
+kubectl get pods
+
+kubectl get all
+
+kubectl get pods -o wide
+
+kubectl get nodes
+
+kubectl delete -f replication-controller.yml

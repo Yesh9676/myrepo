@@ -1,0 +1,93 @@
+LOAD BALANCER
+========================
+Load balancer also performs networkload balanceing
+. load balancer workes only manage kubernatus services only
+. load balancer as the ability to give ip for the entir cluster
+. when ever cluster incring or decreasing according the people who are configuring the dns they aslo need to upadate to chainge
+. the adavantage of load balencer is present we have their three slaves each go to have a pravit ip and public ip load  balancer dosn`t ware about that for entir cluster give one ip
+. loadbalancer is a spicfic type of object which is not target one single slave  it`s targeting entier clusterthat cluster can have 10 slaves or 1000 slaves dosn`t matter for the entire clustr given on ip adress we are linking in the dns we are incrising the cluster decrising the clustr no horm dns is just work's it as workin earlier.
+
+
+kubectl get nodes
+
+cd newfil/
+
+ls
+
+vim pod-definiation5.yml
+
+---
+apiversion: v1
+kind: Pod 
+metadata:
+  name: ghost-pod
+  labels:
+   type: cms
+spec:
+  containers:
+  - name: ghost
+   image: ghost
+   env:
+    - name: NODE_ENV
+     value: development
+...
+kubectl apply -f pod-defination5.yml
+
+kubectl get pods
+
+vim service2.yml
+
+---
+apiversion: v1
+kind: Service
+metadata: 
+  name: ghost-service
+  labels:
+  auther: yeswnth
+spec: 
+  type: LoadBalancer
+  ports:
+   - targetPort: 2368
+        port: 2368
+    nodePort: 30008
+  selecter
+    type: cms
+...
+kubectl apply -f service2.yml
+
+kubectl get all
+
+kubectl delete -f service2.yml
+kubectl delete -f pod-definition5.yml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

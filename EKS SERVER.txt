@@ -1,0 +1,9 @@
+EKS SERVER
+================================
+
+# eksctl create cluster --name cluster --region us-west-1 --nodes 2 --node-type t2.micro
+
+DELETE
+==================
+eksctl delete cluster --region us-west-1 --name cluster
+

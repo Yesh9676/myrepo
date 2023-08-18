@@ -1,0 +1,37 @@
+jenkins interview questions
+===================================================
+1. What is Jenkins?
+Answer: Jenkins is an open-source automation server used for continuous integration, continuous delivery (CI/CD), and automating various tasks in software development.
+
+2. What is Continuous Integration (CI) and Continuous Delivery (CD)?
+Answer: Continuous Integration is the practice of frequently integrating code changes into a shared repository, followed by automated builds and tests. Continuous Delivery extends this concept to automatically deploy code to production-like environments for testing and verification.
+
+3.How do you install Jenkins?
+Answer: Jenkins can be installed on various platforms, including Linux, Windows, and macOS. It's often installed as a Java application by downloading the Jenkins 
+WAR file and running it using Java.
+
+4.What is a Jenkins pipeline?
+Answer: A Jenkins pipeline is a set of instructions, written as code, that defines the steps required to build, test, and deploy applications. It allows you to define your entire CI/CD process in a single file or across multiple stages.
+
+5.How do you define a Jenkins pipeline?
+Answer: Jenkins pipelines can be defined using either Declarative or Scripted syntax. Declarative pipelines provide a simpler, more structured way to define pipelines, while Scripted pipelines offer more flexibility but may require more scripting knowledge.
+
+6.What is the difference between a Jenkins freestyle project and a pipeline?
+Answer: A freestyle project is a traditional Jenkins job that allows you to configure build steps using a graphical user interface. Pipelines, on the other hand, are defined as code and offer more flexibility, better version control, and the ability to handle complex workflows.
+
+7.How do you trigger a Jenkins job?
+Answer: Jenkins jobs can be triggered by various events, such as code commits, scheduled builds, manual triggers, or webhook notifications from version control systems.
+
+8.What is the purpose of Jenkins plugins?
+Answer: Jenkins plugins extend its functionality by adding new features, integrations, and capabilities. There are thousands of plugins available to support different tools, technologies, and processes.
+
+9.How can you secure a Jenkins installation?
+Answer: Jenkins can be secured using authentication and authorization mechanisms, such as integrating with LDAP, using role-based access control, and setting up HTTPS for secure communication.
+
+10.What is the Jenkinsfile?
+Answer: The Jenkinsfile is a text file that defines the pipeline as code. It's typically stored in version control along with the source code and allows you to define the entire CI/CD process.
+Remember that interview questions can vary in complexity, so be prepared to dive deeper into concepts based on the level of the position you're interviewing for.
+
+
+
+

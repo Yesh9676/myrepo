@@ -1,0 +1,50 @@
+vim voting-app-deployment.yml
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: voting-app-deployment
+  labels:
+    name: voting-app
+    author: yeswanth
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: voting-app
+  template:
+    metadata:
+      name: voting-app-pod
+      labels:
+       name: voting-app
+    spec:
+     containers:
+       - name: my-voting-app
+         image: dockersamples/examplevotingapp_vote
+...
+
+vim result-app-deployment.yml
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: result-app-deployment
+  labels:
+    name: result-app
+    author: yeswanth
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: result
+  template:
+    metadata:
+      name: result-app
+      labels:
+        name: result
+    spec:
+      containers:
+        - name: my-result-app
+          image: dockersamples/examplevotingapp_result
+...

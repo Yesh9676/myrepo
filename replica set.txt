@@ -1,0 +1,53 @@
+REPLICA SET
+===============================
+
+vim replica-set.yml
+---
+apiversion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: tomcat-rs
+  labels:
+   type: appserver
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: appserver
+  template:
+    metadata:
+       name:tomcat-pod
+    lables:
+	type:appserver
+   spec:
+     containers:
+        - name: mytomcat
+         image: tomee
+         ports:
+          - comtainerPort: 8080
+           hostPort: 8080 
+...
+
+kubectl get all
+
+kubectl get pods -o wide
+
+kubectl get nodes -o wide
+
+ when you have incrise slaves then again open the vim replica-set.yml file go and edit the replicas number .
+after that use this commend
+
+kubectl replace -f replica-set.yml
+
+kubectl get pods
+
+we have their onother way also use commend also chang it 
+
+kubectl  scale --replicas 2 -f replica-set.yml
+
+kubectl get all
+
+this is not aauto scallig only scalling they have a two wayes one is edit the defination file wher we are editing the defination file the commend we are giving as kubectl replace commend 
+Onother seniroy is we dont distrub the defination file frome the commend from chainged
+
+kubectl delete -f replica-set.yml 
